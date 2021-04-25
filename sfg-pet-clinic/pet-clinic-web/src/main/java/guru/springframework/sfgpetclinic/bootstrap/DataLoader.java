@@ -15,9 +15,9 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader(){
-        ownerService = new OwnerServieMap();
-        vetService = new VetServiceMap();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
@@ -30,11 +30,11 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
-        owner1.setId(2L);
-        owner1.setFirstName("Chaitanya");
-        owner1.setLastName("Balanagu");
+        owner2.setId(2L);
+        owner2.setFirstName("Chaitanya");
+        owner2.setLastName("Balanagu");
 
-        ownerService.save(owner1);
+        ownerService.save(owner2);
         System.out.println("Owners Loaded");
 
         Vet vet1 = new Vet();
@@ -45,9 +45,9 @@ public class DataLoader implements CommandLineRunner {
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
-        vet1.setId(4L);
-        vet1.setFirstName("Sherlock");
-        vet1.setLastName("Holmes");
+        vet2.setId(4L);
+        vet2.setFirstName("Sherlock");
+        vet2.setLastName("Holmes");
 
         vetService.save(vet2);
         System.out.println("Vets loaded");
