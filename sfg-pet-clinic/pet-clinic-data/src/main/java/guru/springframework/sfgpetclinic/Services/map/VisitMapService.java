@@ -4,9 +4,11 @@ import guru.springframework.sfgpetclinic.Model.Owner;
 import guru.springframework.sfgpetclinic.Model.Visit;
 import guru.springframework.sfgpetclinic.Services.OwnerService;
 import guru.springframework.sfgpetclinic.Services.VisitService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
     @Override
