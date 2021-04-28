@@ -29,7 +29,7 @@ public class SpecalityServiceMap extends AbstractMapService<Specality, Long> imp
     }
 
     @Override
-    void deleteByID(Long id) {
-        super.deleteByID(id);
+    public void deleteById(Long id) {
+        super.deleteById(id);
     }
 }
