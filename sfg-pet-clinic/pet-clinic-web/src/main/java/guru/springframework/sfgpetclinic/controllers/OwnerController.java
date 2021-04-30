@@ -50,13 +50,13 @@ public class OwnerController {
         if(owner.getLastName() == null){
             owner.setFirstName("");
         }
-        List<Owner> results = this.ownerService.findAllByLastNameLike(owner.getLastName());
+        List<Owner> results = this.ownerService.findAllByLastNameLike("%"+owner.getLastName()+"%");
         if(results.isEmpty()){
             result.rejectValue("lastName","NotFound","NotFound");
             return "owners/findOwners";
         } else if(results.size() == 1){
             owner = results.get(0);
-            return "redirect:/owners/"+owner.getId();
+            return "redirect:/owners/" + owner.getId();
         } else{
             model.addAttribute("selections", results);
             return "owners/ownersList";
